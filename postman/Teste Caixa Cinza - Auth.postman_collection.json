@@ -1,0 +1,252 @@
+{
+  "info": {
+    "_postman_id": "d84f9de6-075f-4a5b-98d7-1db570975305",
+    "name": "Teste Caixa Cinza - Auth",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "60013395",
+    "_collection_link": "https://go.postman.co/collection/60013395-d84f9de6-075f-4a5b-98d7-1db570975305?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "01 - login válido",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "apikey",
+            "value": "{{api_key}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{api_key}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"{{email}}\",\r\n  \"password\": \"{{password}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/v1/token?grant_type=password",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "auth",
+            "v1",
+            "token"
+          ],
+          "query": [
+            {
+              "key": "grant_type",
+              "value": "password"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "02 - Senha incorreta",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "apikey",
+            "value": "{{api_key}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{api_key}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"{{email}}\",\r\n  \"password\": \"senhaErrada999\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/v1/token?grant_type=password",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "auth",
+            "v1",
+            "token"
+          ],
+          "query": [
+            {
+              "key": "grant_type",
+              "value": "password"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "03 - Usuário Inexistente",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "apikey",
+            "value": "{{api_key}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{api_key}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"naoexiste@teste.com\",\r\n  \"password\": \"{{password}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/v1/token?grant_type=password",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "auth",
+            "v1",
+            "token"
+          ],
+          "query": [
+            {
+              "key": "grant_type",
+              "value": "password"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "04 - Campos Vazios",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "apikey",
+            "value": "{{api_key}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{api_key}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"\",\r\n  \"password\": \"\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/v1/token?grant_type=password",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "auth",
+            "v1",
+            "token"
+          ],
+          "query": [
+            {
+              "key": "grant_type",
+              "value": "password"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "05 - Credenciais Inválidas",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "apikey",
+            "value": "{{api_key}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{api_key}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"abc\",\r\n  \"password\": \"1\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/v1/token?grant_type=password",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "auth",
+            "v1",
+            "token"
+          ],
+          "query": [
+            {
+              "key": "grant_type",
+              "value": "password"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "bearer_token_0qad",
+      "secret": true
+    }
+  ]
+}
